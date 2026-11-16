@@ -38,7 +38,7 @@ the upstream Tcl test suite run in external-server mode).
 - [x] RDB writer/loader (real format, LZF, CRC64), SAVE/BGSAVE, save points
 - [x] DUMP / RESTORE
 - [x] AOF (multi-part, manifest, fsync policies), BGREWRITEAOF
-- [ ] crabdis-check-rdb / crabdis-check-aof
+- [ ] crabdis-check-rdb / crabdis-check-aof ([#4](https://github.com/Srizdebnath/crabdis/issues/4))
 
 ## M5 — Scripting
 - [x] EVAL / EVALSHA / SCRIPT (Lua 5.1, redis.call/pcall, cjson, cmsgpack, bit)
@@ -46,19 +46,21 @@ the upstream Tcl test suite run in external-server mode).
 
 ## M6 — Distribution
 - [x] Replication (REPLICAOF, PSYNC, full + partial resync, WAIT)
-- [ ] Sentinel
+- [ ] Sentinel ([#3](https://github.com/Srizdebnath/crabdis/issues/3))
 - [x] Cluster (slots, MOVED/ASK, gossip bus)
 
 ## M7 — Tools
-- [ ] crabdis-cli
-- [ ] crabdis-benchmark
+- [ ] crabdis-cli ([#5](https://github.com/Srizdebnath/crabdis/issues/5))
+- [ ] crabdis-benchmark ([#6](https://github.com/Srizdebnath/crabdis/issues/6))
 
 ## M8 — Hardening (good first contributions)
-- [ ] Run the upstream Tcl test suite against crabdis and fix failures
-- [ ] Pipelined throughput: batch a whole pipeline under one store lock (currently ~50-65% of Redis at -P 16)
-- [ ] Lua debugger (SCRIPT DEBUG / LDB)
-- [ ] redis.set_repl(): honour AOF-only / replica-only targets (currently treated as ALL)
-- [ ] Interoperate with the real Redis cluster bus protocol (crabdis nodes only talk to crabdis nodes)
+- [ ] Run the upstream Tcl test suite against crabdis and fix failures ([#2](https://github.com/Srizdebnath/crabdis/issues/2))
+- [ ] Pipelined throughput: batch a whole pipeline under one store lock (currently ~50-65% of Redis at -P 16) ([#1](https://github.com/Srizdebnath/crabdis/issues/1))
+- [ ] Lua debugger (SCRIPT DEBUG / LDB) ([#7](https://github.com/Srizdebnath/crabdis/issues/7))
+- [ ] redis.set_repl(): honour AOF-only / replica-only targets (currently treated as ALL) ([#8](https://github.com/Srizdebnath/crabdis/issues/8))
+- [ ] Interoperate with the real Redis cluster bus protocol (crabdis nodes only talk to crabdis nodes) ([#9](https://github.com/Srizdebnath/crabdis/issues/9))
+
+- [ ] CI workflow ([#10](https://github.com/Srizdebnath/crabdis/issues/10))
 
 ## Out of scope (for now)
 - Redis Modules C API
