@@ -801,10 +801,12 @@ fn process_msg(s: &mut Store, shared: &Arc<Shared>, m: Msg, link_tx: &mpsc::Unbo
     // Update the sender's view.
     let (sender_was_master, prev_master) = {
         let n = c.nodes.get_mut(&m.sender)?;
-        if n.link.is_none() {
+        // Like Redis, only our outbound connection is the node's link: PONGs on it
+        // are what clear PFAIL/FAIL. Inbound links just carry the peer's pings.
+        if n.link.is_none() && !inbound {
             n.link = Some(link_tx.clone());
             n.link_created = now;
-            n.inbound = inbound;
+            n.inbound = false;
         }
         n.data_recv = now;
         if m.kind == MSG_PONG {
