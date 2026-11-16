@@ -1,0 +1,13 @@
+[package]
+name = "crabdis"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ahash = "0.8.12"
+bytes = "1.12.1"
+mlua = { version = "0.12.2", features = ["lua51", "vendored", "send"] }
+parking_lot = "0.13.0"
+sha1_smol = "1.0.1"
+sha2 = "0.11.1"
+tokio = { version = "1.54.1", features = ["full"] }
